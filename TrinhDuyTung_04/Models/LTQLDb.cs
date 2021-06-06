@@ -7,8 +7,8 @@ namespace TrinhDuyTung_04.Models
 
     public partial class LTQLDb : DbContext
     {
-        public virtual DbSet<TinhThanh> MaTinhThanhs { get; set; }
-        public virtual DbSet<NhanVien> MaNhanViens { get; set; }
+        public virtual DbSet<TinhThanh> TinhThanhs { get; set; }
+        public virtual DbSet<NhanVien> NhanViens { get; set; }
         public LTQLDb()
             : base("name=LTQLDb1")
         {
