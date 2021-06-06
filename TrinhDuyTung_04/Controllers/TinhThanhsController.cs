@@ -17,7 +17,7 @@ namespace TrinhDuyTung_04.Controllers
         // GET: TinhThanhs
         public ActionResult Index()
         {
-            return View(db.MaTinhThanhs.ToList());
+            return View(db.TinhThanhs.ToList());
         }
 
         // GET: TinhThanhs/Details/5
@@ -27,7 +27,7 @@ namespace TrinhDuyTung_04.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TinhThanh tinhThanh = db.MaTinhThanhs.Find(id);
+            TinhThanh tinhThanh = db.TinhThanhs.Find(id);
             if (tinhThanh == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace TrinhDuyTung_04.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.MaTinhThanhs.Add(tinhThanh);
+                db.TinhThanhs.Add(tinhThanh);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace TrinhDuyTung_04.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TinhThanh tinhThanh = db.MaTinhThanhs.Find(id);
+            TinhThanh tinhThanh = db.TinhThanhs.Find(id);
             if (tinhThanh == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace TrinhDuyTung_04.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TinhThanh tinhThanh = db.MaTinhThanhs.Find(id);
+            TinhThanh tinhThanh = db.TinhThanhs.Find(id);
             if (tinhThanh == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace TrinhDuyTung_04.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            TinhThanh tinhThanh = db.MaTinhThanhs.Find(id);
-            db.MaTinhThanhs.Remove(tinhThanh);
+            TinhThanh tinhThanh = db.TinhThanhs.Find(id);
+            db.TinhThanhs.Remove(tinhThanh);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
